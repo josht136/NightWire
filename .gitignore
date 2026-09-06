@@ -1,5 +1,8 @@
 build/
 dist/
+macos/Nightwire/build/
+*.xcuserstate
+xcuserdata/
 *.egg-info/
 .eggs/
 __pycache__/

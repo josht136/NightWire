@@ -1,0 +1,454 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01FE3582E5143CD327A5419F /* NeighborReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFE740388770AB45C5794B7 /* NeighborReader.swift */; };
+		0BE56D2693F1528855BD1E49 /* HostStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560615BC0A1DF1DFE1CFD3BC /* HostStore.swift */; };
+		23D2BA6D2A89DE0132D3E8FF /* ICMPPinger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F0DA0F2463CD3B94D4AE5 /* ICMPPinger.swift */; };
+		243F7B94DE46990DB581352E /* ThroughputStrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CCD8C7E0AA55EAB2B22C84 /* ThroughputStrip.swift */; };
+		278EB270D87F0B07221351E0 /* NetworkConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62269D6A6E613CCACA2666CB /* NetworkConfigurator.swift */; };
+		30920336B66650AC6EADDDBA /* NightwireApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D045530258BD9B7D1AA5DB15 /* NightwireApp.swift */; };
+		4C68F655EC02437380BC6AE8 /* NetworkStatusStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2634DC75B9518BA0BE6D9F5 /* NetworkStatusStore.swift */; };
+		55B9BAB66D84914B34A4F9A9 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 504A965ACCD9F8EFDEAFD701 /* UserNotifications.framework */; };
+		5E71B43FBF271CAA2C807030 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2640FF84D32E5914067FCFE /* ServiceManagement.framework */; };
+		626187A73DECDBCE3A2B6318 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140E2F24D9B1C4608F820600 /* SidebarView.swift */; };
+		6B18EB05477674C9452E3A05 /* SettingsPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0539E9D5DA1B2123BC07FE0C /* SettingsPopover.swift */; };
+		7FE64F8993738855DF715E8D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9180DF215F4C2F6726453B3C /* ContentView.swift */; };
+		82BE9A7AF125EB3DF9D4C72A /* HostValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC59801D5DD53E226068AB4A /* HostValidator.swift */; };
+		8741C6F18B0EB09364F5685F /* LatencyChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A654006260CC81936D66DA48 /* LatencyChartView.swift */; };
+		9204F80E07E97803BCAF8827 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68D990AF3803209B23BDC3B1 /* Assets.xcassets */; };
+		9840EA7FB2F684A925B4FA85 /* DHCPLeaseReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D60445C4920830913558E4 /* DHCPLeaseReader.swift */; };
+		9B0FF6E1DFC9B5570E5D9349 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E80964010F11D147419EA67B /* SystemConfiguration.framework */; };
+		A34BE6F2271DD9E2F2D77A4E /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B67919DE31C3130DF2F66B8 /* AppSettings.swift */; };
+		C5DF8E56480615D9707F068D /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ACC62A1343055E3644F0CC /* Theme.swift */; };
+		D393EB7882A5B942E4B487CF /* ChangeNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6070B9A7B56700D6F742823C /* ChangeNotifier.swift */; };
+		D98CCA0D47CF1C551A88B592 /* NetworkSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B87B461135EE0BA2644B429 /* NetworkSnapshot.swift */; };
+		DD18965C689EA3D73E4EF00F /* ApplyConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A814A82E0537121E408CE373 /* ApplyConfigView.swift */; };
+		DDE0040B127B76EAAA9A27E5 /* CoreWLAN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B825536645FF356A610A7318 /* CoreWLAN.framework */; };
+		DEB590E5BB256916E4BAF5B3 /* NetworkStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A2D3E975FE591A932089B0 /* NetworkStatusView.swift */; };
+		E02B937EAEC0919E6A3D6049 /* Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA964238FA6365D3C190FCF /* Network.framework */; };
+		E2D7A6B5FB8416F45AC887E5 /* MenuBarStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDC3CAFB2709E6B3A7621CD /* MenuBarStatusView.swift */; };
+		E3F9CBB75A43BCFE8FC57EC4 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513EC9FAC5C671185110DFEF /* Models.swift */; };
+		ED0E2329A8CABDC24D9E5181 /* PingMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0B9B58CA853BBF9EB40A62 /* PingMonitor.swift */; };
+		FF3924581AF066A73AA47964 /* RateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989C3E5C66ABF9DB5688150C /* RateFormat.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0539E9D5DA1B2123BC07FE0C /* SettingsPopover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPopover.swift; sourceTree = "<group>"; };
+		0B67919DE31C3130DF2F66B8 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		140E2F24D9B1C4608F820600 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		3B87B461135EE0BA2644B429 /* NetworkSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSnapshot.swift; sourceTree = "<group>"; };
+		504A965ACCD9F8EFDEAFD701 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		513EC9FAC5C671185110DFEF /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		52D60445C4920830913558E4 /* DHCPLeaseReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DHCPLeaseReader.swift; sourceTree = "<group>"; };
+		560615BC0A1DF1DFE1CFD3BC /* HostStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostStore.swift; sourceTree = "<group>"; };
+		57CCD8C7E0AA55EAB2B22C84 /* ThroughputStrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThroughputStrip.swift; sourceTree = "<group>"; };
+		6070B9A7B56700D6F742823C /* ChangeNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNotifier.swift; sourceTree = "<group>"; };
+		62269D6A6E613CCACA2666CB /* NetworkConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfigurator.swift; sourceTree = "<group>"; };
+		68D990AF3803209B23BDC3B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		78ACC62A1343055E3644F0CC /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		9180DF215F4C2F6726453B3C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		989C3E5C66ABF9DB5688150C /* RateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateFormat.swift; sourceTree = "<group>"; };
+		9A0B9B58CA853BBF9EB40A62 /* PingMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PingMonitor.swift; sourceTree = "<group>"; };
+		A654006260CC81936D66DA48 /* LatencyChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatencyChartView.swift; sourceTree = "<group>"; };
+		A814A82E0537121E408CE373 /* ApplyConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyConfigView.swift; sourceTree = "<group>"; };
+		AB075A27B60F7B4A95D8EDED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AE3F0DA0F2463CD3B94D4AE5 /* ICMPPinger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICMPPinger.swift; sourceTree = "<group>"; };
+		B825536645FF356A610A7318 /* CoreWLAN.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreWLAN.framework; path = System/Library/Frameworks/CoreWLAN.framework; sourceTree = SDKROOT; };
+		BC59801D5DD53E226068AB4A /* HostValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostValidator.swift; sourceTree = "<group>"; };
+		BDDC3CAFB2709E6B3A7621CD /* MenuBarStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarStatusView.swift; sourceTree = "<group>"; };
+		C8A2D3E975FE591A932089B0 /* NetworkStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatusView.swift; sourceTree = "<group>"; };
+		D045530258BD9B7D1AA5DB15 /* NightwireApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightwireApp.swift; sourceTree = "<group>"; };
+		DBFE740388770AB45C5794B7 /* NeighborReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighborReader.swift; sourceTree = "<group>"; };
+		DF627782F9C55E6908AC71F5 /* Nightwire.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nightwire.entitlements; sourceTree = "<group>"; };
+		E2634DC75B9518BA0BE6D9F5 /* NetworkStatusStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatusStore.swift; sourceTree = "<group>"; };
+		E80964010F11D147419EA67B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		EDA964238FA6365D3C190FCF /* Network.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Network.framework; path = System/Library/Frameworks/Network.framework; sourceTree = SDKROOT; };
+		F2640FF84D32E5914067FCFE /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		FB4C1B5D540EA210F7F5D022 /* Nightwire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nightwire.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		899DF1A3FF14F593B47D7ABE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDE0040B127B76EAAA9A27E5 /* CoreWLAN.framework in Frameworks */,
+				9B0FF6E1DFC9B5570E5D9349 /* SystemConfiguration.framework in Frameworks */,
+				E02B937EAEC0919E6A3D6049 /* Network.framework in Frameworks */,
+				5E71B43FBF271CAA2C807030 /* ServiceManagement.framework in Frameworks */,
+				55B9BAB66D84914B34A4F9A9 /* UserNotifications.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0276771117F8A65AF9949991 /* Nightwire */ = {
+			isa = PBXGroup;
+			children = (
+				A814A82E0537121E408CE373 /* ApplyConfigView.swift */,
+				0B67919DE31C3130DF2F66B8 /* AppSettings.swift */,
+				68D990AF3803209B23BDC3B1 /* Assets.xcassets */,
+				6070B9A7B56700D6F742823C /* ChangeNotifier.swift */,
+				9180DF215F4C2F6726453B3C /* ContentView.swift */,
+				52D60445C4920830913558E4 /* DHCPLeaseReader.swift */,
+				560615BC0A1DF1DFE1CFD3BC /* HostStore.swift */,
+				BC59801D5DD53E226068AB4A /* HostValidator.swift */,
+				AE3F0DA0F2463CD3B94D4AE5 /* ICMPPinger.swift */,
+				AB075A27B60F7B4A95D8EDED /* Info.plist */,
+				A654006260CC81936D66DA48 /* LatencyChartView.swift */,
+				BDDC3CAFB2709E6B3A7621CD /* MenuBarStatusView.swift */,
+				513EC9FAC5C671185110DFEF /* Models.swift */,
+				DBFE740388770AB45C5794B7 /* NeighborReader.swift */,
+				62269D6A6E613CCACA2666CB /* NetworkConfigurator.swift */,
+				3B87B461135EE0BA2644B429 /* NetworkSnapshot.swift */,
+				E2634DC75B9518BA0BE6D9F5 /* NetworkStatusStore.swift */,
+				C8A2D3E975FE591A932089B0 /* NetworkStatusView.swift */,
+				DF627782F9C55E6908AC71F5 /* Nightwire.entitlements */,
+				D045530258BD9B7D1AA5DB15 /* NightwireApp.swift */,
+				9A0B9B58CA853BBF9EB40A62 /* PingMonitor.swift */,
+				989C3E5C66ABF9DB5688150C /* RateFormat.swift */,
+				0539E9D5DA1B2123BC07FE0C /* SettingsPopover.swift */,
+				140E2F24D9B1C4608F820600 /* SidebarView.swift */,
+				78ACC62A1343055E3644F0CC /* Theme.swift */,
+				57CCD8C7E0AA55EAB2B22C84 /* ThroughputStrip.swift */,
+			);
+			path = Nightwire;
+			sourceTree = "<group>";
+		};
+		2D5A857BBBFBB5469AD731A8 = {
+			isa = PBXGroup;
+			children = (
+				0276771117F8A65AF9949991 /* Nightwire */,
+				B6C9930FA0754098CB2CBBE5 /* Frameworks */,
+				6C51DC217B794940A3167C89 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6C51DC217B794940A3167C89 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FB4C1B5D540EA210F7F5D022 /* Nightwire.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B6C9930FA0754098CB2CBBE5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B825536645FF356A610A7318 /* CoreWLAN.framework */,
+				EDA964238FA6365D3C190FCF /* Network.framework */,
+				F2640FF84D32E5914067FCFE /* ServiceManagement.framework */,
+				E80964010F11D147419EA67B /* SystemConfiguration.framework */,
+				504A965ACCD9F8EFDEAFD701 /* UserNotifications.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CC61B6B8F5B161916F154D4A /* Nightwire */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12C5FED8F807C14E95FB1EF2 /* Build configuration list for PBXNativeTarget "Nightwire" */;
+			buildPhases = (
+				A1A0BD9506A423D7E73CDBEA /* Sources */,
+				223417DCA3D35751D3BD389E /* Resources */,
+				899DF1A3FF14F593B47D7ABE /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Nightwire;
+			packageProductDependencies = (
+			);
+			productName = Nightwire;
+			productReference = FB4C1B5D540EA210F7F5D022 /* Nightwire.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A087C8ACC32041AE3F716FBB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					CC61B6B8F5B161916F154D4A = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 57AA82CBC7BF6CE61D32EE37 /* Build configuration list for PBXProject "Nightwire" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 2D5A857BBBFBB5469AD731A8;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 6C51DC217B794940A3167C89 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CC61B6B8F5B161916F154D4A /* Nightwire */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		223417DCA3D35751D3BD389E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9204F80E07E97803BCAF8827 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A1A0BD9506A423D7E73CDBEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A34BE6F2271DD9E2F2D77A4E /* AppSettings.swift in Sources */,
+				DD18965C689EA3D73E4EF00F /* ApplyConfigView.swift in Sources */,
+				D393EB7882A5B942E4B487CF /* ChangeNotifier.swift in Sources */,
+				7FE64F8993738855DF715E8D /* ContentView.swift in Sources */,
+				9840EA7FB2F684A925B4FA85 /* DHCPLeaseReader.swift in Sources */,
+				0BE56D2693F1528855BD1E49 /* HostStore.swift in Sources */,
+				82BE9A7AF125EB3DF9D4C72A /* HostValidator.swift in Sources */,
+				23D2BA6D2A89DE0132D3E8FF /* ICMPPinger.swift in Sources */,
+				8741C6F18B0EB09364F5685F /* LatencyChartView.swift in Sources */,
+				E2D7A6B5FB8416F45AC887E5 /* MenuBarStatusView.swift in Sources */,
+				E3F9CBB75A43BCFE8FC57EC4 /* Models.swift in Sources */,
+				01FE3582E5143CD327A5419F /* NeighborReader.swift in Sources */,
+				278EB270D87F0B07221351E0 /* NetworkConfigurator.swift in Sources */,
+				D98CCA0D47CF1C551A88B592 /* NetworkSnapshot.swift in Sources */,
+				4C68F655EC02437380BC6AE8 /* NetworkStatusStore.swift in Sources */,
+				DEB590E5BB256916E4BAF5B3 /* NetworkStatusView.swift in Sources */,
+				30920336B66650AC6EADDDBA /* NightwireApp.swift in Sources */,
+				ED0E2329A8CABDC24D9E5181 /* PingMonitor.swift in Sources */,
+				FF3924581AF066A73AA47964 /* RateFormat.swift in Sources */,
+				6B18EB05477674C9452E3A05 /* SettingsPopover.swift in Sources */,
+				626187A73DECDBCE3A2B6318 /* SidebarView.swift in Sources */,
+				C5DF8E56480615D9707F068D /* Theme.swift in Sources */,
+				243F7B94DE46990DB581352E /* ThroughputStrip.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		6E2979493BC0364A6554BFE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Nightwire/Nightwire.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Nightwire/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Nightwire;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSMinimumSystemVersion = 14.0;
+				INFOPLIST_KEY_NSHighResolutionCapable = YES;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nightwire.app;
+				PRODUCT_NAME = Nightwire;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Release;
+		};
+		74EEC784F6AF38D9C6C76945 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Nightwire/Nightwire.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Nightwire/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Nightwire;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSMinimumSystemVersion = 14.0;
+				INFOPLIST_KEY_NSHighResolutionCapable = YES;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nightwire.app;
+				PRODUCT_NAME = Nightwire;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Debug;
+		};
+		B10BE542DD450C3521222008 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		D585FEDFE9567A6063F88C80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		12C5FED8F807C14E95FB1EF2 /* Build configuration list for PBXNativeTarget "Nightwire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74EEC784F6AF38D9C6C76945 /* Debug */,
+				6E2979493BC0364A6554BFE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		57AA82CBC7BF6CE61D32EE37 /* Build configuration list for PBXProject "Nightwire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D585FEDFE9567A6063F88C80 /* Debug */,
+				B10BE542DD450C3521222008 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A087C8ACC32041AE3F716FBB /* Project object */;
+}

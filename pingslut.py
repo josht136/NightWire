@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Ping tracker with live matplotlib chart and SQLite history."""
+"""Legacy matplotlib tracker. The product is the native Mac app Nightwire in macos/Nightwire/."""
 
 import sqlite3
 from pathlib import Path

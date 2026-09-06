@@ -1,26 +1,28 @@
-# PingSlut
+# Nightwire
 
-macOS ping tracker with live charts and SQLite history.
+Native macOS ping tracker (Swift/SwiftUI). Live neon latency chart, add/remove hosts, hide a series without stopping pings.
 
-## Setup
+The Python matplotlib app (`pingslut.py`) is legacy. Use the Mac app.
+
+## Launch
+
+Double-click `Nightwire.app` on the Desktop.
+
+## Rebuild
 
 ```bash
-python3 -m pip install -r requirements.txt
-python3 pingslut.py
-```
-
-## Build macOS app
-
-```bash
-chmod +x build.sh
 ./build.sh
 ```
 
-The app bundle is written to `dist/PingSlut.app`.
+This writes `/Users/jtiller/Desktop/Nightwire.app` and keeps the Xcode project in `macos/Nightwire/`.
 
-## Default targets
+## First launch
 
-- `8.8.8.8` (Google DNS)
-- `1.1.1.1` (Cloudflare DNS)
+Allow network access if macOS prompts. ICMP is outgoing; no root required.
 
-Edit `addresses_to_track` in `pingslut.py` to change targets.
+History: `~/Library/Application Support/Nightwire/history.sqlite`
+
+## Defaults
+
+- `8.8.8.8`
+- `1.1.1.1`
