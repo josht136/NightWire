@@ -1,0 +1,77 @@
+name: Release Nightwire
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify tag matches MARKETING_VERSION
+        run: |
+          set -euo pipefail
+          TAG="${GITHUB_REF_NAME#v}"
+          MARKETING="$(python3 - <<'PY'
+          import pathlib, re
+          text = pathlib.Path("macos/Nightwire/project.yml").read_text()
+          match = re.search(r"MARKETING_VERSION:\s*(\S+)", text)
+          if not match:
+              raise SystemExit("MARKETING_VERSION not found in macos/Nightwire/project.yml")
+          print(match.group(1))
+          PY
+          )"
+          if [[ "$TAG" != "$MARKETING" ]]; then
+            echo "Tag $GITHUB_REF_NAME does not match MARKETING_VERSION $MARKETING"
+            echo "Bump MARKETING_VERSION in macos/Nightwire/project.yml before tagging."
+            exit 1
+          fi
+
+      - name: Install xcodegen
+        run: brew install xcodegen
+
+      - name: Build Nightwire
+        working-directory: macos/Nightwire
+        run: |
+          set -euo pipefail
+          xcodegen generate
+          xcodebuild \
+            -scheme Nightwire \
+            -configuration Release \
+            -derivedDataPath build \
+            CODE_SIGN_IDENTITY="-" \
+            CODE_SIGNING_REQUIRED=YES \
+            CODE_SIGNING_ALLOWED=YES
+
+      - name: Zip Nightwire.app
+        run: |
+          set -euo pipefail
+          APP="macos/Nightwire/build/Build/Products/Release/Nightwire.app"
+          if [[ ! -d "$APP" ]]; then
+            echo "Built app not found at $APP" >&2
+            exit 1
+          fi
+          ditto -c -k --keepParent "$APP" Nightwire.app.zip
+
+      - name: Publish GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          NOTES="$(cat <<'EOF'
+          Nightwire macOS build. The in-app updater looks for the Nightwire.app.zip asset.
+
+          Private repository: the GitHub API will not show this release without a token. Add a GitHub token in Nightwire → Options, or make the repository public.
+          EOF
+          )"
+          gh release create "$GITHUB_REF_NAME" \
+            Nightwire.app.zip \
+            --title "Nightwire ${GITHUB_REF_NAME#v}" \
+            --notes "$NOTES"

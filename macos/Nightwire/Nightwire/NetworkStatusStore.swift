@@ -5,6 +5,8 @@ import Observation
 @MainActor
 @Observable
 final class NetworkStatusStore {
+    static let shared = NetworkStatusStore()
+
     var snapshot = NetworkSnapshot(interfaces: [], publicIP: nil, neighbors: [])
     var publicIPText = "…"
     var copiedField: String?
@@ -12,6 +14,7 @@ final class NetworkStatusStore {
     var downBps: Double = 0
     var upBps: Double = 0
     var throughputHistory: [ThroughputPoint] = []
+    var detailsWindowOpen = false
 
     private var localLoop: Task<Void, Never>?
     private var publicLoop: Task<Void, Never>?

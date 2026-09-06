@@ -1,11 +1,16 @@
 import AppKit
 import SwiftUI
 
+enum NightwireWindowID {
+    static let details = "details"
+}
+
 @main
 struct NightwireApp: App {
     @State private var monitor = PingMonitor()
-    @State private var network = NetworkStatusStore()
+    @State private var network = NetworkStatusStore.shared
     @State private var settings = AppSettings.shared
+    @State private var updater = AppUpdater.shared
 
     var body: some Scene {
         WindowGroup("Nightwire") {
@@ -17,6 +22,13 @@ struct NightwireApp: App {
                     monitor.start()
                     network.start()
                     monitor.syncGateway(network.snapshot.primary?.gateway)
+                }
+                .task {
+                    try? await Task.sleep(for: .milliseconds(1500))
+                    await updater.checkOnLaunch()
+                }
+                .sheet(isPresented: promptBinding) {
+                    UpdatePromptView(updater: updater)
                 }
         }
         .windowStyle(.hiddenTitleBar)
@@ -31,7 +43,21 @@ struct NightwireApp: App {
                     ])
                 }
             }
+            CommandGroup(after: .appInfo) {
+                Button("Check for Updates…") {
+                    Task { await updater.checkNow() }
+                }
+            }
         }
+
+        Window("Details", id: NightwireWindowID.details) {
+            NetworkDetailsWindow(store: network)
+                .frame(minWidth: 620, minHeight: 440)
+                .preferredColorScheme(.dark)
+        }
+        .windowStyle(.hiddenTitleBar)
+        .defaultSize(width: 720, height: 640)
+        .windowResizability(.contentMinSize)
 
         MenuBarExtra {
             MenuBarStatusView(network: network)
@@ -39,5 +65,12 @@ struct NightwireApp: App {
             MenuBarLabel(network: network)
         }
         .menuBarExtraStyle(.window)
+    }
+
+    private var promptBinding: Binding<Bool> {
+        Binding(
+            get: { updater.showPrompt },
+            set: { updater.setPromptPresented($0) }
+        )
     }
 }

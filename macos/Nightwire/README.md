@@ -32,3 +32,14 @@ Targets and history live in:
 `~/Library/Application Support/Nightwire/history.sqlite`
 
 Defaults if the store is empty: `8.8.8.8` and `1.1.1.1`.
+
+## Updates
+
+A small custom updater (not Sparkle) talks to GitHub Releases. Sparkle needs Developer ID + signed appcasts; this app is ad-hoc signed (`CODE_SIGN_IDENTITY=-`).
+
+- Check: `GET https://api.github.com/repos/josht136/pingslut/releases/latest` compared to `CFBundleShortVersionString` / `CFBundleVersion`.
+- Asset name: `Nightwire.app.zip`.
+- Launch does a version check only. Download and install each require a click. **Skip this version** is remembered.
+- Optional GitHub token in Options for a private repo. Public repos/releases do not need one. GitHub will not expose private-repo Releases without auth.
+
+Publish by bumping `MARKETING_VERSION` in `project.yml` and pushing a matching `vX.Y.Z` tag. CI zips the app and creates the Release.

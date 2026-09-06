@@ -12,8 +12,11 @@
 		23D2BA6D2A89DE0132D3E8FF /* ICMPPinger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F0DA0F2463CD3B94D4AE5 /* ICMPPinger.swift */; };
 		243F7B94DE46990DB581352E /* ThroughputStrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CCD8C7E0AA55EAB2B22C84 /* ThroughputStrip.swift */; };
 		278EB270D87F0B07221351E0 /* NetworkConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62269D6A6E613CCACA2666CB /* NetworkConfigurator.swift */; };
+		29DF91D2C9AD9171938FC27C /* UpdateConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B02332A4B71EB1E7663AEDA /* UpdateConfig.swift */; };
 		30920336B66650AC6EADDDBA /* NightwireApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D045530258BD9B7D1AA5DB15 /* NightwireApp.swift */; };
+		34045B503D242948F3A25CEB /* AppUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967708E0077C936DC721D759 /* AppUpdater.swift */; };
 		4C68F655EC02437380BC6AE8 /* NetworkStatusStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2634DC75B9518BA0BE6D9F5 /* NetworkStatusStore.swift */; };
+		54DA08AF5B93E2F3151B3E9F /* NetworkDetailsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445E9B163C05D2A33D35F12 /* NetworkDetailsWindow.swift */; };
 		55B9BAB66D84914B34A4F9A9 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 504A965ACCD9F8EFDEAFD701 /* UserNotifications.framework */; };
 		5E71B43FBF271CAA2C807030 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2640FF84D32E5914067FCFE /* ServiceManagement.framework */; };
 		626187A73DECDBCE3A2B6318 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140E2F24D9B1C4608F820600 /* SidebarView.swift */; };
@@ -25,6 +28,7 @@
 		9840EA7FB2F684A925B4FA85 /* DHCPLeaseReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D60445C4920830913558E4 /* DHCPLeaseReader.swift */; };
 		9B0FF6E1DFC9B5570E5D9349 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E80964010F11D147419EA67B /* SystemConfiguration.framework */; };
 		A34BE6F2271DD9E2F2D77A4E /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B67919DE31C3130DF2F66B8 /* AppSettings.swift */; };
+		BA1448DD67ED57D0BD7A46A8 /* UpdatePromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E100E3334AE3F55EF94781B /* UpdatePromptView.swift */; };
 		C5DF8E56480615D9707F068D /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ACC62A1343055E3644F0CC /* Theme.swift */; };
 		D393EB7882A5B942E4B487CF /* ChangeNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6070B9A7B56700D6F742823C /* ChangeNotifier.swift */; };
 		D98CCA0D47CF1C551A88B592 /* NetworkSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B87B461135EE0BA2644B429 /* NetworkSnapshot.swift */; };
@@ -42,17 +46,21 @@
 		0539E9D5DA1B2123BC07FE0C /* SettingsPopover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPopover.swift; sourceTree = "<group>"; };
 		0B67919DE31C3130DF2F66B8 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		140E2F24D9B1C4608F820600 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		2445E9B163C05D2A33D35F12 /* NetworkDetailsWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDetailsWindow.swift; sourceTree = "<group>"; };
 		3B87B461135EE0BA2644B429 /* NetworkSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSnapshot.swift; sourceTree = "<group>"; };
 		504A965ACCD9F8EFDEAFD701 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		513EC9FAC5C671185110DFEF /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		52D60445C4920830913558E4 /* DHCPLeaseReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DHCPLeaseReader.swift; sourceTree = "<group>"; };
 		560615BC0A1DF1DFE1CFD3BC /* HostStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostStore.swift; sourceTree = "<group>"; };
 		57CCD8C7E0AA55EAB2B22C84 /* ThroughputStrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThroughputStrip.swift; sourceTree = "<group>"; };
+		5E100E3334AE3F55EF94781B /* UpdatePromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePromptView.swift; sourceTree = "<group>"; };
 		6070B9A7B56700D6F742823C /* ChangeNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNotifier.swift; sourceTree = "<group>"; };
 		62269D6A6E613CCACA2666CB /* NetworkConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfigurator.swift; sourceTree = "<group>"; };
 		68D990AF3803209B23BDC3B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78ACC62A1343055E3644F0CC /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		7B02332A4B71EB1E7663AEDA /* UpdateConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateConfig.swift; sourceTree = "<group>"; };
 		9180DF215F4C2F6726453B3C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		967708E0077C936DC721D759 /* AppUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUpdater.swift; sourceTree = "<group>"; };
 		989C3E5C66ABF9DB5688150C /* RateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateFormat.swift; sourceTree = "<group>"; };
 		9A0B9B58CA853BBF9EB40A62 /* PingMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PingMonitor.swift; sourceTree = "<group>"; };
 		A654006260CC81936D66DA48 /* LatencyChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatencyChartView.swift; sourceTree = "<group>"; };
@@ -94,6 +102,7 @@
 			children = (
 				A814A82E0537121E408CE373 /* ApplyConfigView.swift */,
 				0B67919DE31C3130DF2F66B8 /* AppSettings.swift */,
+				967708E0077C936DC721D759 /* AppUpdater.swift */,
 				68D990AF3803209B23BDC3B1 /* Assets.xcassets */,
 				6070B9A7B56700D6F742823C /* ChangeNotifier.swift */,
 				9180DF215F4C2F6726453B3C /* ContentView.swift */,
@@ -107,6 +116,7 @@
 				513EC9FAC5C671185110DFEF /* Models.swift */,
 				DBFE740388770AB45C5794B7 /* NeighborReader.swift */,
 				62269D6A6E613CCACA2666CB /* NetworkConfigurator.swift */,
+				2445E9B163C05D2A33D35F12 /* NetworkDetailsWindow.swift */,
 				3B87B461135EE0BA2644B429 /* NetworkSnapshot.swift */,
 				E2634DC75B9518BA0BE6D9F5 /* NetworkStatusStore.swift */,
 				C8A2D3E975FE591A932089B0 /* NetworkStatusView.swift */,
@@ -118,6 +128,8 @@
 				140E2F24D9B1C4608F820600 /* SidebarView.swift */,
 				78ACC62A1343055E3644F0CC /* Theme.swift */,
 				57CCD8C7E0AA55EAB2B22C84 /* ThroughputStrip.swift */,
+				7B02332A4B71EB1E7663AEDA /* UpdateConfig.swift */,
+				5E100E3334AE3F55EF94781B /* UpdatePromptView.swift */,
 			);
 			path = Nightwire;
 			sourceTree = "<group>";
@@ -224,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A34BE6F2271DD9E2F2D77A4E /* AppSettings.swift in Sources */,
+				34045B503D242948F3A25CEB /* AppUpdater.swift in Sources */,
 				DD18965C689EA3D73E4EF00F /* ApplyConfigView.swift in Sources */,
 				D393EB7882A5B942E4B487CF /* ChangeNotifier.swift in Sources */,
 				7FE64F8993738855DF715E8D /* ContentView.swift in Sources */,
@@ -236,6 +249,7 @@
 				E3F9CBB75A43BCFE8FC57EC4 /* Models.swift in Sources */,
 				01FE3582E5143CD327A5419F /* NeighborReader.swift in Sources */,
 				278EB270D87F0B07221351E0 /* NetworkConfigurator.swift in Sources */,
+				54DA08AF5B93E2F3151B3E9F /* NetworkDetailsWindow.swift in Sources */,
 				D98CCA0D47CF1C551A88B592 /* NetworkSnapshot.swift in Sources */,
 				4C68F655EC02437380BC6AE8 /* NetworkStatusStore.swift in Sources */,
 				DEB590E5BB256916E4BAF5B3 /* NetworkStatusView.swift in Sources */,
@@ -246,6 +260,8 @@
 				626187A73DECDBCE3A2B6318 /* SidebarView.swift in Sources */,
 				C5DF8E56480615D9707F068D /* Theme.swift in Sources */,
 				243F7B94DE46990DB581352E /* ThroughputStrip.swift in Sources */,
+				29DF91D2C9AD9171938FC27C /* UpdateConfig.swift in Sources */,
+				BA1448DD67ED57D0BD7A46A8 /* UpdatePromptView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
