@@ -66,9 +66,7 @@ jobs:
         run: |
           set -euo pipefail
           NOTES="$(cat <<'EOF'
-          Nightwire macOS build. The in-app updater looks for the Nightwire.app.zip asset.
-
-          Private repository: the GitHub API will not show this release without a token. Add a GitHub token in Nightwire → Options, or make the repository public.
+          Nightwire macOS build. The in-app updater looks for the Nightwire.app.zip asset on josht136/NightWire.
           EOF
           )"
           gh release create "$GITHUB_REF_NAME" \

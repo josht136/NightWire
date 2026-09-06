@@ -29,9 +29,9 @@ History: `~/Library/Application Support/Nightwire/history.sqlite`
 
 ## Updates
 
-Nightwire checks GitHub Releases on launch (`josht136/pingslut`, asset `Nightwire.app.zip`). It never downloads or installs until you agree.
+Nightwire checks GitHub Releases on launch (`josht136/NightWire`, asset `Nightwire.app.zip`). It never downloads or installs until you agree.
 
-**Private repo:** unauthenticated GitHub API cannot see private releases. GitHub also does not offer public Releases on a private repository. Either make the repo public, or paste a GitHub token (classic `repo`, or fine-grained **Contents** + **Releases** read) in Nightwire → Options. The token stays on this Mac.
+Releases are public on `josht136/NightWire`, so no GitHub token is required. An optional token in Nightwire → Options is only needed if you point the updater at a private repository.
 
 ### Publish a version
 

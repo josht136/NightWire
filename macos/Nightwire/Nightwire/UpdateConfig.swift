@@ -2,7 +2,7 @@ import Foundation
 
 enum UpdateConfig {
     static let owner = "josht136"
-    static let repo = "pingslut"
+    static let repo = "NightWire"
     static let assetName = "Nightwire.app.zip"
     static let bundleIdentifier = "com.nightwire.app"
 
