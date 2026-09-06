@@ -62,6 +62,13 @@ struct UpdatePromptView: View {
                 .foregroundStyle(Theme.text)
                 .fixedSize(horizontal: false, vertical: true)
 
+        case .relaunching:
+            statusRow(
+                title: "Relaunching Nightwire…",
+                detail: "Quitting this copy, then opening the new one.",
+                progress: nil
+            )
+
         case .failed(let message):
             Text(message)
                 .font(.system(size: 12, weight: .medium))
@@ -110,7 +117,7 @@ struct UpdatePromptView: View {
                     updater.relaunch()
                 }
 
-            case .checking, .installing:
+            case .checking, .installing, .relaunching:
                 Spacer()
 
             case .idle, .upToDate, .failed:

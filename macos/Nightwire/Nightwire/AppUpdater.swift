@@ -33,6 +33,7 @@ enum UpdatePhase: Equatable {
     case readyToInstall(GitHubRelease)
     case installing
     case installed(String)
+    case relaunching
     case failed(String)
 }
 
@@ -58,7 +59,7 @@ final class AppUpdater {
 
     var canCancel: Bool {
         switch phase {
-        case .installing:
+        case .installing, .relaunching:
             return false
         default:
             return true
@@ -141,8 +142,18 @@ final class AppUpdater {
     }
 
     func relaunch() {
-        relaunchReplacedApp()
-        NSApp.terminate(nil)
+        present(.relaunching)
+        Task {
+            await Task.yield()
+            do {
+                try scheduleRelaunchHelper()
+            } catch {
+                present(.failed(error.localizedDescription))
+                return
+            }
+            try? await Task.sleep(for: .milliseconds(400))
+            NSApp.terminate(nil)
+        }
     }
 
     func dismissPrompt() {
@@ -298,17 +309,53 @@ final class AppUpdater {
         try clearQuarantine(at: destination)
     }
 
-    private func relaunchReplacedApp() {
+    private func scheduleRelaunchHelper() throws {
         let destination = Bundle.main.bundleURL
         let pid = ProcessInfo.processInfo.processIdentifier
+        let scriptURL = FileManager.default.temporaryDirectory
+            .appendingPathComponent("nightwire-relaunch-\(pid).sh")
         let script = """
-        while kill -0 \(pid) 2>/dev/null; do sleep 0.15; done
-        open \(Self.shellEscape(destination.path))
+        #!/bin/bash
+        pid=\(pid)
+        waited=0
+        while /bin/kill -0 "$pid" 2>/dev/null; do
+          /bin/sleep 0.2
+          waited=$((waited + 1))
+          if [ "$waited" -ge 100 ]; then
+            break
+          fi
+        done
+        /bin/sleep 0.4
+        /usr/bin/open \(Self.shellEscape(destination.path))
+        /bin/rm -f \(Self.shellEscape(scriptURL.path))
         """
-        let process = Process()
-        process.executableURL = URL(fileURLWithPath: "/bin/bash")
-        process.arguments = ["-c", script]
-        try? process.run()
+        do {
+            try script.write(to: scriptURL, atomically: true, encoding: .utf8)
+            try FileManager.default.setAttributes(
+                [.posixPermissions: 0o700],
+                ofItemAtPath: scriptURL.path
+            )
+            // nohup + background reparents the helper so it is not killed when
+            // this Process is released or Nightwire terminates.
+            let process = Process()
+            process.executableURL = URL(fileURLWithPath: "/bin/bash")
+            process.arguments = [
+                "-c",
+                "nohup /bin/bash \(Self.shellEscape(scriptURL.path)) >/dev/null 2>&1 &"
+            ]
+            process.standardInput = FileHandle.nullDevice
+            process.standardOutput = FileHandle.nullDevice
+            process.standardError = FileHandle.nullDevice
+            try process.run()
+            process.waitUntilExit()
+            guard process.terminationStatus == 0 else {
+                throw UpdateError.relaunchFailed
+            }
+        } catch let error as UpdateError {
+            throw error
+        } catch {
+            throw UpdateError.relaunchFailed
+        }
     }
 
     private func applyToken(to request: inout URLRequest) {
@@ -410,6 +457,7 @@ private enum UpdateError: LocalizedError {
     case notNewerThanRunning
     case replaceFailed(String)
     case commandFailed(String, String)
+    case relaunchFailed
 
     var errorDescription: String? {
         switch self {
@@ -435,6 +483,8 @@ private enum UpdateError: LocalizedError {
             return message
         case .commandFailed(_, let detail):
             return detail.isEmpty ? "Failed to unpack or replace the app." : detail
+        case .relaunchFailed:
+            return "Could not schedule relaunch. Quit Nightwire from the menu and open it again."
         }
     }
 }
