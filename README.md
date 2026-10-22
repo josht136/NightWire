@@ -4,6 +4,12 @@ Native macOS ping tracker (Swift/SwiftUI). Live neon latency chart, add/remove h
 
 The Python matplotlib app (`pingslut.py`) is legacy. Use the Mac app.
 
+The iPhone and iPad app in `ios/Nightwire` shows the same adapter details, without the ping chart. It selects a USB Ethernet adapter when one is plugged in.
+
+## iOS
+
+Open `ios/Nightwire/Nightwire.xcodeproj` in Xcode and run it on a device. See `ios/Nightwire/README.md` for signing, the Wi-Fi entitlement, and which fields iOS can fill in.
+
 ## Launch
 
 Double-click `Nightwire.app` on the Desktop.
